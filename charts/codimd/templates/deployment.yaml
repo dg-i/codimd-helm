@@ -85,6 +85,12 @@ spec:
                   name: {{ template "codimd.shortName" . }}-db-secret
                   key: connection
                 {{- end }}
+            {{ if and .Values.codimd.authentication.oauth2.enabled .Values.codimd.authentication.oauth2.existingClientSecret }}
+            - name: CMD_OAUTH2_CLIENT_SECRET
+              valueFrom:
+                secretKeyRef:
+                {{- toYaml .Values.codimd.authentication.oauth2.existingClientSecret | nindent 18 }}
+            {{ end }}
             - name: CMD_SESSION_LIFE
               value: {{ .Values.codimd.security.sessionLife | quote }}
             - name: CMD_HSTS_ENABLE
