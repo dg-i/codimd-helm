@@ -138,6 +138,9 @@ codimd:
   #    username:
   #    password:
   #    databaseName:
+  #    existingSecretDBUrl:
+  #      name: db-secret-name
+  #      key: connection
 
   ##
   ## Image upload store
@@ -171,9 +174,14 @@ codimd:
       - ReadWriteOnce
     volumeMode: Filesystem
 
-  ## for advanced used, manually setup environment for used
+  ## for advanced usage, manually setup environment variables
   extraEnvironmentVariables: {}
     # CMD_LOGLEVEL: info
+
+  # for advanced usage, manually add secret refs to environment
+  extraSecretRefs: {}
+    #- secretRef:
+    #    name: example-secretname
 
   ## automatically check new version
   versionCheck: true

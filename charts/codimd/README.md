@@ -95,6 +95,8 @@ If you want use ingress, please set `service.type` to be `ClusterIP`
 | codimd.database.username                       | The username that connects to external database                                                           | `nil`                        |
 | codimd.database.password                       | The password that connects to external database                                                           | `nil`                        |
 | codimd.database.databaseName                   | The external database name we used                                                                        | `nil`                        |
+| codimd.database.existingSecretDBUrl.name       | The name of an existing secret containing the database connection URL                                     | `nil`                        |
+| codimd.database.existingSecretDBUrl.key        | The key in the existing secret which points to the database connection URL                                | `nil`                        |
 | codimd.imageUpload.storeType                   | The type of image storage                                                                                 | `filesystem`                 |
 | codimd.imageUpload.imgur.clientId              | The Imgur OAuth ClientID                                                                                  | `nil`                        |
 | codimd.imageUpload.azure.connectionString      | The Azure image store connection string                                                                   | `nil`                        |
@@ -138,6 +140,8 @@ If you want use ingress, please set `service.type` to be `ClusterIP`
 | codimd.markdown.useHardBreak                   |                                                                                                           | `true`                       |
 | codimd.markdown.linkifyHeaderStyle             |                                                                                                           | `keep-case`                  |
 | codimd.extraEnvironmentVariables               | Extra environment variable for CodiMD container                                                           | `{}`                         |
+| codimd.extraSecretRefs                         | Extra secret refs for CodiMD container                                                                    | `{}`                         |
+
 ### CodiMD Authentication Method parameters
 
 | Parameter                                               | Description                                                                                               | Default           |
