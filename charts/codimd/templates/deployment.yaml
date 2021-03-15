@@ -123,6 +123,8 @@ spec:
               value: {{ .Values.codimd.noteCreation.freeUrlForbiddenNoteIds | quote }}
             - name: CMD_DEFAULT_PERMISSION
               value: {{ .Values.codimd.noteCreation.defaultPermission | quote }}
+            - name: CMD_ALLOW_ANONYMOUS
+              value: {{ .Values.codimd.notePermission.allowAnonymous | quote }}
             - name: CMD_ALLOW_ANONYMOUS_EDITS
               value: {{ .Values.codimd.notePermission.allowAnonymousEdit | quote}}
             - name: CMD_ALLOW_ANONYMOUS_VIEWS

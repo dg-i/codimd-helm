@@ -223,6 +223,7 @@ codimd:
   ## setting about note permission
   ##
   notePermission:
+    allowAnonymous: false
     allowAnonymousEdit: true
     allowAnonymousView: true
   ##
